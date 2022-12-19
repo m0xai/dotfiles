@@ -135,6 +135,8 @@ alias ga='git add'
 alias gcm='git commit -m'
 alias gpom='git push origin master'
 
+alias hbrs-vpn='sudo openvpn ~/client.conf'
+
 parse_git_bg() {
   if [[ $(git status -s 2> /dev/null) ]]; then
     echo -e "\033[0;31m"

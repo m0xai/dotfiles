@@ -64,30 +64,30 @@ run_watch VPN {
 }
 
 tztime local {
-    format = "%V  %A %e.%B   %H:%M:%S"
+    format = "W%V  %A %e.%B   %H:%M:%S"
 }
 
 load {
-    format = " %1min"
+    format = " %1min  "
 }
 
 cpu_usage {
-    format = " %usage"
+    format = " %usage  "
 }
 
 cpu_temperature 0 {
-	format = " %degrees°C"
+	format = "   %degrees°C  "
 }
 
 disk "/" {
-	format = " %avail"
+	format = " %avail  "
 	prefix_type	= custom
 	low_threshold = 20
 	threshold_type = percentage_avail
 }
 
 volume master {
-    format = "%volume  "
+    format = "蓼 %volume  "
     format_muted = " "
     device = "default"
     mixer = "Master"
