@@ -28,6 +28,7 @@ order += "battery 0"
 order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "load"
+order += "memory"
 order += "tztime local"
 
 wireless wlp4s0 {
@@ -64,11 +65,15 @@ run_watch VPN {
 }
 
 tztime local {
-    format = "W%V  %A %e.%B   %H:%M:%S"
+    format = "  %A %e.%B   %H:%M:%S W%V"
 }
 
 load {
-    format = " %1min  "
+    format = " %1min "
+}
+
+memory {
+    format = " %used/%total"
 }
 
 cpu_usage {
