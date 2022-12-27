@@ -212,8 +212,10 @@ bar {
 
 bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 exec --no-startup-id picom -CGb
+exec xset r rate 200 25
 
 # sound
 # bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 # bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 # bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
