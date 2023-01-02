@@ -12,8 +12,9 @@ function SetFormatters()
 
     elseif ft == "typescript" or ft == "typescriptreact" or ft == "javascript" or ft == "javascriptreact" then
         print("This is frontend file, init!")
-        vim.cmd [[autocmd BufWritePre * :silent %!prettier --stdin-filepath %]]
+        vim.cmd [[autocmd BufWritePre * :Format ]]
     end
 end
 
 vim.cmd "autocmd FileType * lua SetFormatters()"
+
