@@ -4,10 +4,9 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
   'jdtls',
-  'eslint',
   'tsserver',
+  'eslint',
   'sumneko_lua',
-  'rust_analyzer',
 })
 
 -- Fix Undefined global 'vim'
@@ -20,6 +19,10 @@ lsp.configure('sumneko_lua', {
         }
     }
 })
+
+-- lsp.configure('eslint', {
+--   cmd = { "/home/m0xai/.local/share/nvim/mason/bin/eslint_d", "--stdio" }
+--   })
 
 
 local cmp = require('cmp')
