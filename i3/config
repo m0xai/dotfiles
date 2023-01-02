@@ -203,9 +203,11 @@ bar {
             statusline #81a1c1
 
             #                   border  background text
-            focused_workspace  #1f222d #1f222d    #81a1c1
+            # focused_workspace  #1f222d #1f222d    #81a1c1
+            focused_workspace  #1f222d #1f222d    #ffffff
             active_workspace   #1f222d #252936    #5e81ac
-            inactive_workspace #1f222d #1f222d    #4c566a
+            inactive_workspace #1f222d #1f222d    #81a1c1
+            # inactive_workspace #1f222d #1f222d    #4c566a
             urgent_workspace   #1f222d #1f222d    #ee829f
             binding_mode       #1f222d #81a1c1    #2e3440
     }
