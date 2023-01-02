@@ -134,10 +134,14 @@ alias gal='git add .'
 alias ga='git add'
 alias gcm='git commit -m'
 alias gpom='git push origin master'
-
+# HBRS
 alias hbrs-vpn='sudo openvpn ~/client.conf'
-
+# tmux 
 alias tm="tmux attach || tmux new"
+# ranger
+alias rg="ranger"
+export VISUAL=nvim;
+export EDITOR=nvim;
 
 parse_git_bg() {
   if [[ $(git status -s 2> /dev/null) ]]; then
