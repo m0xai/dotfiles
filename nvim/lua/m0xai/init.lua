@@ -1,5 +1,5 @@
 require("m0xai.remap")
 require("m0xai.packer")
 require("m0xai.set")
-require("m0xai.autocmd")
 require("m0xai.formatter")
+require("m0xai.autocmd")
