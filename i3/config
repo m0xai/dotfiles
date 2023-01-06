@@ -186,8 +186,8 @@ bindsym $mod+r mode "resize"
 #}
 
 # class                 border  backgr. text    indicator
-client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
-client.unfocused        #2e3440 #1f222d #888888 #1f222d
+client.focused          #81a1c1 #ff9900 #212121 #81a1c1
+client.unfocused        #2e3440 #1f222d #ffd89d #1f222d
 client.focused_inactive #2e3440 #1f222d #888888 #1f222d
 client.placeholder      #2e3440 #1f222d #888888 #1f222d
 client.urgent           #900000 #900000 #ffffff #900000
@@ -198,22 +198,20 @@ bar {
     font pango:JetBrains Mono Nerd Font 12
     status_command i3status
     colors {
-            separator  #1f222d
-            background #1f222d
-            statusline #81a1c1
+            separator  #212121
+            background #212121
+            statusline #ff9900
 
             #                   border  background text
-            # focused_workspace  #1f222d #1f222d    #81a1c1
-            focused_workspace  #1f222d #1f222d    #ffffff
+            focused_workspace  #1f222d #1f222d    #ffa927 
             active_workspace   #1f222d #252936    #5e81ac
-            inactive_workspace #1f222d #1f222d    #81a1c1
-            # inactive_workspace #1f222d #1f222d    #4c566a
+            inactive_workspace #1f222d #1f222d    #b16a00
             urgent_workspace   #1f222d #1f222d    #ee829f
             binding_mode       #1f222d #81a1c1    #2e3440
     }
 }
 
-bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
+bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#212121' -sb '#ff9900' -sf '#212121' -fn 'monospace-12' -p 'dmenu'"
 exec --no-startup-id picom -CGb
 exec xset r rate 200 25
 exec feh --bg-fill ~/Pictures/Wallpapers/9.jpg
