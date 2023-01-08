@@ -142,6 +142,8 @@ alias tm="tmux attach || tmux new"
 alias rg="ranger"
 export VISUAL=nvim;
 export EDITOR=nvim;
+# lazygit
+alias lg="lazygit"
 
 parse_git_bg() {
   if [[ $(git status -s 2> /dev/null) ]]; then
