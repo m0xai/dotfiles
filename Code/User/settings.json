@@ -1,5 +1,5 @@
 {
-  "editor.fontSize": 16,
+  "editor.fontSize": 18,
   "vim.useCtrlKeys": false,
   "vim.insertModeKeyBindingsNonRecursive": [
     {
@@ -55,7 +55,7 @@
   ],
   "editor.formatOnSave": true,
   "window.menuBarVisibility": "toggle",
-  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontFamily": "Input Mono",
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -73,6 +73,9 @@
     "editor.insertSpaces": true
   },
   "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
