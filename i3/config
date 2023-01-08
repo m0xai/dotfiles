@@ -48,7 +48,18 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 
 # kill focused window
-bindsym $mod+q kill
+set $close "Close the window? (y/n)"
+
+mode $close {
+    bindsym y kill, mode default
+    bindsym Return kill, mode default
+
+    bindsym n mode default
+    bindsym Escape mode default
+}
+
+bindsym $mod+q mode $close
+bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
