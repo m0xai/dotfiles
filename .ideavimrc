@@ -17,6 +17,7 @@ imap kj <ESC>
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat de action
+map <leader>e <Action>(EditorActions)
 map <leader>gf <Action>(ReformatCode)
 nmap <leader>gh <Action>(QuickJavaDoc)
 nmap <leader>gr <Action>(Refactorings.QuickListPopupAction)
@@ -30,8 +31,7 @@ nmap <leader>gd <Action>(GotoDeclaration)
 nmap <leader>gD <Action>(GotoDeclaration)(Back)
 nmap <leader>[ <Action>(PreviousTab)
 nmap <leader>] <Action>(NextTab)
-" nmap <leader>rf <Action>(RefactoringMeu)
-nmap <leader>p <Action>(GotoFile)
+nmap <leader>pf <Action>(GotoFile)
 nmap <leader>e <Action>(SearchEverywhere)
 
 "" Map <leader>d to start debug
