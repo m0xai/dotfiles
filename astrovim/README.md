@@ -1,0 +1,1 @@
+Copy this folder into `.config/nvim/lua/user` 
