@@ -17,22 +17,15 @@ imap kj <ESC>
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat de action
-map <leader>e <Action>(EditorActions)
-map <leader>gf <Action>(ReformatCode)
-nmap <leader>gh <Action>(QuickJavaDoc)
-nmap <leader>gr <Action>(Refactorings.QuickListPopupAction)
-nmap <leader>gn <Action>(ShowErrorDescription)
-nmap <leader>gg <Action>(Generate)
-nmap <leader>ga <Action>(ShowIntentionActions)
-
-nmap <leader>ge <Action>(GotoNextError)
-nmap <leader>gE <Action>(GotoNextError)
-nmap <leader>gd <Action>(GotoDeclaration)
-nmap <leader>gD <Action>(GotoDeclaration)(Back)
+nmap K <Action>(QuickJavaDoc)
+:map <leader>qd <Action>(QuickDefinition)
+:map <leader>ld <Action>(ShowErrorDescription)
+:map <leader>la <Action>(ShowIntentionActions)
+:map <leader>lr <Action>(Refactorings.QuickListPopupAction)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fw <Action>(FindInPath)
 nmap <leader>[ <Action>(PreviousTab)
 nmap <leader>] <Action>(NextTab)
-nmap <leader>pf <Action>(GotoFile)
-nmap <leader>e <Action>(SearchEverywhere)
 
 "" Map <leader>d to start debug
 "map <leader>d <Action>(Debug)
