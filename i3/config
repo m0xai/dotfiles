@@ -13,11 +13,11 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-# font pango:monospace 12 
+# font pango:monospace 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Input Mono 10 
+font pango:Input Mono 10
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -36,38 +36,22 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-
-# Media Keys
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+smart_borders on
+
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec --no-startup-id alacritty --class=floating
+for_window [class="^floating$"] resize set 1240 980
 
 # kill focused window
-set $close "Close the window? (y/n)"
-
-mode $close {
-    bindsym y kill, mode default
-    bindsym Return kill, mode default
-
-    bindsym n mode default
-    bindsym Escape mode default
-}
-
-bindsym $mod+q mode $close
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
@@ -94,12 +78,6 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+b split h
@@ -151,6 +129,8 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+bindsym $mod+0x5b workspace prev
+bindsym $mod+0x5d workspace next
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -170,6 +150,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+Shift+Left move workspace to output eDP-1 right
+bindsym $mod+Shift+Right move workspace to output DP-1 left
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -203,38 +186,48 @@ default_border pixel 1
 default_floating_border pixel 1
 for_window [class="^.*"] border pixel 1
 
+# Set size for floating windows
+
+
 # class                 border  backgr. text    indicator
-client.focused          #ff9900 #212121 #ff9900 #81a1c1
-client.unfocused        #2e3440 #212121 #eca869 #1f222d
+client.focused          #81a1c1 #81a1c1 #212121 #81a1c1
+client.unfocused        #2e3440 #1f222d #888888 #1f222d
 client.focused_inactive #2e3440 #1f222d #888888 #1f222d
 client.placeholder      #2e3440 #1f222d #888888 #1f222d
 client.urgent           #900000 #900000 #ffffff #900000
 
-client.background       #212121
+client.background       #242424
 
-# align the title of every window center
-title_align center
-
-bar {
+ bar {
     font pango:JetBrains Mono Nerd Font 12
     status_command i3status
     colors {
-            separator  #212121
-            background #212121
-            statusline #ff9900
+            separator  #1f222d
+            background #181818
+            statusline #bac5cf
 
             #                   border  background text
-            focused_workspace  #1f222d #1f222d    #ffa927 
-            active_workspace   #1f222d #252936    #5e81ac
-            inactive_workspace #1f222d #1f222d    #b16a00
+            # focused_workspace  #1f222d #1f222d    #81a1c1
+            focused_workspace  #1f222d #097ed3    #ffffff
+            active_workspace   #bac5cf #181818    #5e81ac
+            inactive_workspace #1f222d #181818    #bac5cf
+           # inactive_workspace #1f222d #1f222d    #4c566a
             urgent_workspace   #1f222d #1f222d    #ee829f
             binding_mode       #1f222d #81a1c1    #2e3440
     }
 }
 
-bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#212121' -sb '#ff9900' -sf '#212121' -fn 'monospace-12' -p 'dmenu'"
-# Scale screen for MBP Built-in Display
-exec xrandr --output eDP-1 --scale 0.6 
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282a2e' -sb '#f0c674' -sf '#212121' -fn 'monospace-12' -p 'dmenu%'"
+bindsym $Mod+d exec i3-dmenu-desktop
+
 exec --no-startup-id picom -CGb
 exec xset r rate 200 25
-exec feh --bg-fill ~/Pictures/Wallpapers/1.png
+exec feh --bg-fill ~/Pictures/Wallpapers/zelda.jpg
+exec /usr/bin/pasystray
+
+# sound
+# bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+# bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+# bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
