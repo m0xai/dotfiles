@@ -11,48 +11,44 @@
       "after": ["<ESC>"]
     }
   ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["g", "a"],
-      "commands": ["editor.action.quickFix"]
-    },
-    {
-      "before": ["g", "d"],
-      "commands": ["editor.action.revealDefinitionAside"]
-    },
-    {
-      "before": ["g", "h"],
-      "commands": ["editor.action.showHover"]
-    },
-    {
-      "before": ["g", "r"],
-      "commands": ["editor.action.refactor"]
-    },
-    {
-      "before": ["g", "n"],
-      "commands": ["editor.action.rename"]
-    },
-    {
-      "before": ["g", "f"],
-      "commands": ["actions.find"]
-    },
-    {
-      "before": [" ", "f"],
-      "commands": ["workbench.view.search"]
-    },
-    {
-      "before": [" ", "p"],
-      "commands": ["workbench.action.quickOpen"]
-    },
-    {
-      "before": [" ", "e"],
-      "commands": ["workbench.action.showCommands"]
-    },
-    {
-      "before": [" ", "g"],
-      "commands": ["workbench.view.scm"]
-    }
-  ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+          "before": ["[", "b"],
+          "commands": ["workbench.action.previousEditor"]
+        },
+        {
+          "before": ["]", "b"],
+          "commands": ["workbench.action.nextEditor"]
+        },
+        {
+          "before": [" ", "w"],
+          "commands": ["workbench.action.files.save"]
+        },
+        {
+          "before": [" ", "c"],
+          "commands": ["workbench.action.closeActiveEditor"]
+        },
+        {
+          "before": [" ", "l", "a"],
+          "commands": ["editor.action.quickFix"]
+        },
+        {
+          "before": [" ", "g", "d"],
+          "commands": ["editor.action.revealDefinition"]
+        },
+        {
+          "before": [" ", "l", "d"],
+          "commands": ["editor.action.showHover"]
+        },
+        {
+          "before": [" ", "l", "r"],
+          "commands": ["editor.action.refactor"]
+        },
+        {
+          "before": [" ", "k", "l"],
+          "commands": ["editor.toggleFold"]
+        },
+    ],
   "editor.formatOnSave": true,
   "window.menuBarVisibility": "toggle",
   "editor.fontFamily": "Input Mono",
