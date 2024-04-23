@@ -1,77 +1,67 @@
 {
-  "editor.fontSize": 18,
-  "vim.useCtrlKeys": false,
   "vim.insertModeKeyBindingsNonRecursive": [
     {
       "before": ["j", "k"],
       "after": ["<ESC>"]
     },
     {
-      "before": ["k", "j"],
+      "before": ["j", "j"],
       "after": ["<ESC>"]
     }
   ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-          "before": ["[", "b"],
-          "commands": ["workbench.action.previousEditor"]
-        },
-        {
-          "before": ["]", "b"],
-          "commands": ["workbench.action.nextEditor"]
-        },
-        {
-          "before": [" ", "w"],
-          "commands": ["workbench.action.files.save"]
-        },
-        {
-          "before": [" ", "c"],
-          "commands": ["workbench.action.closeActiveEditor"]
-        },
-        {
-          "before": [" ", "l", "a"],
-          "commands": ["editor.action.quickFix"]
-        },
-        {
-          "before": [" ", "g", "d"],
-          "commands": ["editor.action.revealDefinition"]
-        },
-        {
-          "before": [" ", "l", "d"],
-          "commands": ["editor.action.showHover"]
-        },
-        {
-          "before": [" ", "l", "r"],
-          "commands": ["editor.action.refactor"]
-        },
-        {
-          "before": [" ", "k", "l"],
-          "commands": ["editor.toggleFold"]
-        },
-    ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["[", "b"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["]", "b"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": [" ", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": [" ", "c"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": [" ", "l", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": [" ", "g", "d"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    {
+      "before": [" ", "l", "d"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": [" ", "l", "r"],
+      "commands": ["editor.action.refactor"]
+    },
+    {
+      "before": [" ", "l", "n"],
+      "commands": ["editor.action.marker.next"],
+    },
+    {
+      "before": [" ", "k", "l"],
+      "commands": ["editor.toggleFold"]
+    }
+  ],
+  "editor.fontFamily": "JetBrains Mono",
   "editor.formatOnSave": true,
-  "window.menuBarVisibility": "toggle",
-  "editor.fontFamily": "Input Mono",
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": "punctuation.separator",
-        "settings": {
-          "fontStyle": "bold"
-        }
-      }
-    ]
-  },
-  // Indent for java files
-  "[java]": {
-    "editor.detectIndentation": false,
-    "editor.tabSize": 8,
-    "editor.insertSpaces": true
-  },
-  "[jsonc]": {
+  "files.autoSave": "onWindowChange",
+  "editor.wordWrap": "bounded",
+  "editor.largeFileOptimizations": false,
+  "editor.minimap.enabled": false,
+  "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[typescriptreact]": {
+  "editor.fontSize": 16,
+  "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
