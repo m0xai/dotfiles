@@ -1,0 +1,10 @@
+[window]
+startup_mode = "Maximized"
+opacity = 0.8
+blur = true
+option_as_alt = "Both"
+
+[font]
+normal = { family = "Zed Mono", style = "Regular"}
+size = 16
+

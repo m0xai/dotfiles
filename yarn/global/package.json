@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "create-astro": "^4.11.4",
+    "create-quasar": "^1.4.4",
+    "create-vite": "^6.4.1",
+    "create-vuetify": "^1.1.0"
+  }
+}
