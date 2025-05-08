@@ -1,6 +1,6 @@
 [window]
-startup_mode = "Maximized"
-opacity = 0.8
+startup_mode = "SimpleFullscreen"
+opacity = 0.5
 blur = true
 option_as_alt = "Both"
 

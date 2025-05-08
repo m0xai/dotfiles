@@ -272,10 +272,10 @@ plugins {
 // eg. "https://example.com/my-plugin.wasm"
 load_plugins {
     // "file:/Users/m0xai/.config/zellij/plugins/zjframes.wasm" {
-    //     hide_frame_except_for_fullscreen true
-    //     hide_frame_except_for_scroll true
-    //     hide_frame_except_for_search true
-    //     hide_frame_for_single_pane true
+        // hide_frame_except_for_fullscreen true
+        // hide_frame_except_for_scroll true
+        // hide_frame_except_for_search true
+        // hide_frame_for_single_pane true
     // }
 }
  
@@ -289,12 +289,13 @@ load_plugins {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-// theme "dracula"
+// theme "catppuccin-frappe"
+theme "cyber-noir"
  
 // Choose the base input mode of zellij.
 // Default: normal
 // 
-default_mode "normal"
+// default_mode "normal"
  
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -308,7 +309,7 @@ default_mode "normal"
 // The name of the default layout to load on startup
 // Default: "default"
 // 
-// default_layout "compact"
+default_layout "compact"
  
 // The folder in which Zellij will look for layouts
 // (Requires restart)
