@@ -1,6 +1,6 @@
 [window]
 startup_mode = "SimpleFullscreen"
-opacity = 0.5
+opacity = 0.8
 blur = true
 option_as_alt = "Both"
 
