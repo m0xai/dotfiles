@@ -7,6 +7,5 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.recipes.ai" },
-
-  -- { import = "astrocommunity.completion.copilot-lua-cmp" },
+  { import = "astrocommunity.pack.java" },
 }
