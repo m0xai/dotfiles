@@ -6,7 +6,5 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.recipes.ai" },
   { import = "astrocommunity.pack.java" },
-  { import = "astrocommunity.motion.leap-nvim" },
 }

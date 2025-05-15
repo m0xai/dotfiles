@@ -4,9 +4,8 @@ return {
     ---Wtype AstroCoreOpts
     opts = {
       mappings = {
-        n = {},
-        i = {
-          ["<Tab>"] = { "<C-n>", desc = "Next completion" },
+        n = {
+          ["<D-i>"] = { "<cmd>CopilotChatOpen<cr>" },
         },
       },
     },
